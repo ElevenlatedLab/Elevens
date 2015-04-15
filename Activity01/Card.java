@@ -22,8 +22,7 @@ public class Card {
      */
     private int pointValue;
 
-
-   /**
+    /**
      * Creates a new <code>Card</code> instance.
      *
      * @param cardRank  a <code>String</code> value
@@ -34,32 +33,33 @@ public class Card {
      *                  containing the point value of the card
      */
     public Card(String cardRank, String cardSuit, int cardPointValue) {
-
+        rank = cardRank;
+        suit = cardSuit;
+        pointValue = cardPointValue;
     }
-
 
     /**
      * Accesses this <code>Card's</code> suit.
      * @return this <code>Card's</code> suit.
      */
-    public String suit() {
-
+    public String getSuit() {
+        return suit;
     }
 
     /**
      * Accesses this <code>Card's</code> rank.
      * @return this <code>Card's</code> rank.
      */
-    public String rank() {
-
+    public String getRank() {
+        return rank;
     }
 
-   /**
+    /**
      * Accesses this <code>Card's</code> point value.
      * @return this <code>Card's</code> point value.
      */
-    public int pointValue() {
-
+    public int getPointValue() {
+        return pointValue;
     }
 
     /** Compare this card with the argument.
@@ -69,7 +69,17 @@ public class Card {
      *         false otherwise.
      */
     public boolean matches(Card otherCard) {
-
+        String cardSuit = otherCard.getSuit();
+        String cardRank = otherCard.getRank();
+        int cardValue = otherCard.getPointValue();
+        if (suit.equals(cardSuit) && rank.equals(cardRank) && pointValue == cardValue)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     /**
@@ -84,6 +94,7 @@ public class Card {
      */
     @Override
     public String toString() {
-
+        Integer.toString(pointValue);
+        return (rank +" of " +suit +" (point value = " +pointValue +")");
     }
 }
