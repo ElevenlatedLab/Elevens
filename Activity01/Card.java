@@ -42,7 +42,7 @@ public class Card {
      * Accesses this <code>Card's</code> suit.
      * @return this <code>Card's</code> suit.
      */
-    public String getSuit() {
+    public String suit() {
         return suit;
     }
 
@@ -50,7 +50,7 @@ public class Card {
      * Accesses this <code>Card's</code> rank.
      * @return this <code>Card's</code> rank.
      */
-    public String getRank() {
+    public String rank() {
         return rank;
     }
 
@@ -58,7 +58,7 @@ public class Card {
      * Accesses this <code>Card's</code> point value.
      * @return this <code>Card's</code> point value.
      */
-    public int getPointValue() {
+    public int pointValue() {
         return pointValue;
     }
 
@@ -69,17 +69,9 @@ public class Card {
      *         false otherwise.
      */
     public boolean matches(Card otherCard) {
-        String cardSuit = otherCard.getSuit();
-        String cardRank = otherCard.getRank();
-        int cardValue = otherCard.getPointValue();
-        if (suit.equals(cardSuit) && rank.equals(cardRank) && pointValue == cardValue)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return otherCard.suit().equals(this.suit())
+			&& otherCard.rank().equals(this.rank())
+			&& otherCard.pointValue() == this.pointValue();
     }
 
     /**
