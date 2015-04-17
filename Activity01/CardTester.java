@@ -69,6 +69,15 @@ public class CardTester
         assertEquals(false, cardN1.matches(cardN2));
     }
     
+    @Test
+    public void testMatches2() 
+    {
+        Card cardN1 = new Card("King", "Hearts", 13);
+        Card cardN2 = new Card("King", "Hearts", 13);
+        assertEquals(true, cardN1.matches(cardN2));
+    }
+    
+    
      @Test
     public void testToString() 
     {
