@@ -100,6 +100,18 @@ public class DeckTester {
         assertEquals(null, deck3.deal());
     }
     
+    /**
+     * Not working test
+     */
+    //@Test
+    //public void testDeal2()
+    //{
+    //    Card c = new Card("Beast", "6", 2200);
+    //    assertSame(c, deck2.deal());
+    //}
+    
 }
+
+
 
 
